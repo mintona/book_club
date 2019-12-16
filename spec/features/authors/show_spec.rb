@@ -33,7 +33,7 @@ RSpec.describe "As a visitor", type: :feature do
         expect(page).to have_content(science.title)
         expect(page).to have_content(art.title)
         expect(page).to have_content(math.title)
-        expect(page).to have_content("Average Number of Pages: #{author_1.average_pages}")
+        expect(page).to have_content("Average Number of Pages: #{author_1.average_pages.to_i}")
 
         visit "/books"
 
@@ -43,7 +43,7 @@ RSpec.describe "As a visitor", type: :feature do
 
         expect(current_path).to eq("/authors/#{author_5.id}")
         expect(page).to have_content(history.title)
-        expect(page).to have_content("Average Number of Pages: #{author_5.average_pages}")
+        expect(page).to have_content("Average Number of Pages: #{author_5.average_pages.to_i}")
       end
     end
   end
