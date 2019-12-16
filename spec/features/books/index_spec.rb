@@ -26,35 +26,34 @@ RSpec.describe "As a user", type: :feature do
         expect(page).to have_content("#{science.title}")
         expect(page).to have_content("#{science.pages}")
         expect(page).to have_content("#{science.publication_year}")
-        expect(page).to have_content("#{author_1.name}")
-        expect(page).to have_content("#{author_2.name}")
-        expect(page).to have_content("#{author_3.name}")
+        expect(page).to have_link("#{author_1.name}")
+        expect(page).to have_link("#{author_2.name}")
+        expect(page).to have_link("#{author_3.name}")
       end
 
       within "#book-#{math.id}" do
         expect(page).to have_content("#{math.title}")
         expect(page).to have_content("#{math.pages}")
         expect(page).to have_content("#{math.publication_year}")
-        expect(page).to have_content("#{author_3.name}")
-        expect(page).to have_content("#{author_4.name}")
+        expect(page).to have_link("#{author_3.name}")
+        expect(page).to have_link("#{author_4.name}")
       end
 
       within "#book-#{history.id}" do
         expect(page).to have_content("#{history.title}")
         expect(page).to have_content("#{history.pages}")
         expect(page).to have_content("#{history.publication_year}")
-        expect(page).to have_content("#{author_5.name}")
+        expect(page).to have_link("#{author_5.name}")
       end
 
       within "#book-#{art.id}" do
-        save_and_open_page
         expect(page).to have_content("#{art.title}")
         expect(page).to have_content("#{art.pages}")
         expect(page).to have_content("#{art.publication_year}")
-        expect(page).to have_content("#{author_1.name}")
-        expect(page).to have_content("#{author_2.name}")
-        expect(page).to have_content("#{author_4.name}")
-        expect(page).to have_content("#{author_6.name}")
+        expect(page).to have_link("#{author_1.name}")
+        expect(page).to have_link("#{author_2.name}")
+        expect(page).to have_link("#{author_4.name}")
+        expect(page).to have_link("#{author_6.name}")
       end
     end
   end
